@@ -16,8 +16,8 @@
     </style>
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/belg</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenBackground">@color/pink</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/icon_white</item>
         <item name="windowSplashScreenAnimationDuration">2000</item>
         <item name="postSplashScreenTheme">@style/Theme.DailyAdvice</item>
     </style>

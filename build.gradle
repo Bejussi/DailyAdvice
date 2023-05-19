@@ -18,6 +18,7 @@ buildscript {
         coroutines_android_version = "1.6.4"
         datastore_preferences = "1.0.0"
         splashscreen="1.0.1"
+        swiperefreshlayout="1.2.0-alpha01"
     }
 
 

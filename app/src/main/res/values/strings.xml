@@ -2,4 +2,7 @@
     <string name="app_name">Daily Advice</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="share_advice">Share advice</string>
+    <string name="advice_id">Advise %1$d</string>
+    <string name="advice_text">Good advice is something a man gives when he is too old to set a bad example.</string>
 </resources>

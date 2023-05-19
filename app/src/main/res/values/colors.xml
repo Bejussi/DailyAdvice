@@ -5,7 +5,8 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#433D36</color>
+    <color name="black">#23273F</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="belg">#FEF7EC</color>
+    <color name="pink">#D62E55</color>
+    <color name="grey">#BEC1DD</color>
 </resources>
