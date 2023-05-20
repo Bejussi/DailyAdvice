@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.AdviceFragment">
+    tools:context=".presentation.advice.AdviceFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/leftGuideline"
@@ -34,7 +34,20 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_end="@dimen/margin_top_bottom"/>
 
+    <TextView
+        android:id="@+id/refreshText"
+        style="@style/AdviseId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/swipe_to_refresh"
+        app:layout_constraintBottom_toBottomOf="@+id/swipeRefreshLayout"
+        app:layout_constraintEnd_toStartOf="@+id/rightGuideline"
+        app:layout_constraintStart_toStartOf="@+id/leftGuideline"
+        app:layout_constraintTop_toTopOf="@+id/swipeRefreshLayout" />
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/shareAdviceButton"
@@ -43,6 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/appName">
 
         <LinearLayout
+            android:id="@+id/adviceLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"

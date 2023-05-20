@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/adviceFragment"
-        android:name="com.bejussi.dailyadvice.presentation.AdviceFragment"
+        android:name="com.bejussi.dailyadvice.presentation.advice.AdviceFragment"
         android:label="fragment_advice"
         tools:layout="@layout/fragment_advice" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.bejussi.dailyadvice.presentation.SettingsFragment"
+        android:name="com.bejussi.dailyadvice.presentation.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action

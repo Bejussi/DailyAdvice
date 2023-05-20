@@ -5,4 +5,8 @@
     <string name="share_advice">Share advice</string>
     <string name="advice_id">Advise %1$d</string>
     <string name="advice_text">Good advice is something a man gives when he is too old to set a bad example.</string>
+    <string name="error">Oops, something went wrong!</string>
+    <string name="checkInternet">Couldn\'t reach server, check your internet connection.</string>
+    <string name="unknownError">Unknown error</string>
+    <string name="swipe_to_refresh">Swipe to refresh</string>
 </resources>
