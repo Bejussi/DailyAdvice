@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 class AdviceRepositoryImpl @Inject constructor(
     private val adviceApi: AdviceApi,
-    private val stringResourcesProvider: StringResourcesProvider
+    private val stringResourcesProvider: StringResourcesProvider,
 ): AdviceRepository {
 
     override fun getRandomAdvice(): Flow<Resource<Advice>> = flow {
@@ -35,5 +35,4 @@ class AdviceRepositoryImpl @Inject constructor(
             ))
         }
     }
-
 }

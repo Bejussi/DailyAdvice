@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/coffee_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/bill_margin_elements"
+    android:background="@drawable/button_selector">
+
+    <TextView
+        style="@style/ResultTotalText"
+        android:id="@+id/donate_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/billing_margin"
+        android:layout_marginTop="@dimen/billing_margin"
+        android:layout_marginEnd="@dimen/billing_margin"
+        android:text="@string/coffee" />
+
+    <TextView
+        android:id="@+id/donate_price_text"
+        style="@style/ResultSumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/donate_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/billing_margin"
+        android:layout_marginTop="@dimen/billing_price_margin_top"
+        android:layout_marginEnd="@dimen/billing_margin"
+        android:layout_marginBottom="@dimen/billing_margin"
+        android:text="@string/prise" />
+
+</RelativeLayout>

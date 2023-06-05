@@ -77,4 +77,9 @@ dependencies {
 
     //SwipeRefreshLayout
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayout")
+
+    implementation"androidx.preference:preference-ktx:$preferences"
+
+    // WorkManager with Coroutines
+    implementation "androidx.work:work-runtime-ktx:$work"
 }
