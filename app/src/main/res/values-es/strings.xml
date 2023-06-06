@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Daily Advice</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="share_advice">Compartir consejos</string>
+    <string name="advice_id">Consejo %1$d</string>
+    <string name="advice_text">Un buen consejo es lo que da un hombre cuando es demasiado mayor para dar un mal ejemplo.</string>
+    <string name="error">¡Desafortunadamente, algo salió mal!</string>
+    <string name="checkInternet">Error al conectarse al servidor, verifique su conexión a Internet.</string>
+    <string name="unknownError">Error desconocido</string>
+    <string name="swipe_to_refresh">Deslizar para actualizar</string>
+    <string name="settings">Configuración</string>
+    <string name="subscription">Suscripción</string>
+    <string name="manage_subscription">Administrar suscripción</string>
+    <string name="preferences">Preferencias</string>
+    <string name="reminders">Recordatorios</string>
+    <string name="language">Idioma</string>
+    <string name="theme">Tema</string>
+    <string name="support_us">Apóyanos</string>
+    <string name="rate_us">Califícanos</string>
+    <string name="contact">Contacto</string>
+    <string name="donate_for_creators">Donar para creadores</string>
+    <string name="become_a_supporter">Conviértete en partidario. Apoye como mejor le parezca</string>
+    <string name="coffee">Café</string>
+    <string name="other">Otro</string>
+    <string name="privacy_policy">Política de Privacidad</string>
+    <string name="terms_conditions">Términos y Condiciones</string>
+    <string name="title_notification_reminder">Consejos diarios</string>
+    <string name="reminders_notification_channel_name">Servicio de notificación</string>
+    <string name="select_theme">Seleccione un tema</string>
+    <string-array name="themes">
+        <item>Luces</item>
+        <item>Oscuro</item>
+        <item>Sistema</item>
+    </string-array>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancelar</string>
+    <string name="select_language">Seleccione un idioma</string>
+    <string-array name="language">
+        <item>Inglés</item>
+        <item>ucraniano</item>
+        <item>ucraniano</item>
+        <item>Alemán</item>
+        <item>Francés</item>
+        <item>Español</item>
+    </string-array>
+    <string name="application_not_found">Aplicación no encontrada</string>
+    <string name="send_email">Enviar correo electrónico</string>
+    <string name="select_time">Seleccione una hora</string>
+</resources>

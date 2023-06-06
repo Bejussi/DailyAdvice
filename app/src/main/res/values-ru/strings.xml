@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Daily Advice</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="share_advice">Поделиться советом</string>
+    <string name="advice_id">Совет %1$d</string>
+    <string name="advice_text">Хороший совет — это то, что дает мужчина, когда он слишком стар, чтобы подавать плохой пример.</string>
+    <string name="error">К сожалению, что-то пошло не так!</string>
+    <string name="checkInternet">Не удалось подключиться к серверу, проверьте подключение к Интернету.</string>
+    <string name="unknownError">Неизвестная ошибка</string>
+    <string name="swipe_to_refresh">Проведите по экрану, чтобы обновить</string>
+    <string name="settings">Настройки</string>
+    <string name="subscription">Подписка</string>
+    <string name="manage_subscription">Управление подпиской</string>
+    <string name="preferences">Предпочтения</string>
+    <string name="reminders">Напоминания</string>
+    <string name="language">Язык</string>
+    <string name="theme">Тема</string>
+    <string name="support_us">Поддержите нас</string>
+    <string name="rate_us">Оцените нас</string>
+    <string name="contact">Контакт</string>
+    <string name="donate_for_creators">Пожертвовать для создателей</string>
+    <string name="become_a_supporter">Станьте сторонником. Поддержите так, как считаете нужным</string>
+    <string name="coffee">Кофе</string>
+    <string name="other">Другое</string>
+    <string name="privacy_policy">Политика конфиденциальности</string>
+    <string name="terms_conditions">Положения и условия</string>
+    <string name="title_notification_reminder">Ежедневные советы</string>
+    <string name="reminders_notification_channel_name">Служба уведомлений</string>
+    <string name="select_theme">Выберите тему</string>
+    <string-array name="themes">
+        <item>Светлая</item>
+        <item>Темная</item>
+        <item>Системная</item>
+    </string-array>
+    <string name="ok">Ок</string>
+    <string name="cancel">Отменить</string>
+    <string name="select_language">Выберите язык</string>
+    <string-array name="language">
+        <item>Английский</item>
+        <item>Украинский</item>
+        <item>Русский</item>
+        <item>Немецкий</item>
+        <item>Французский</item>
+        <item>Испанский</item>
+    </string-array>
+    <string name="application_not_found">Приложение не найдено</string>
+    <string name="send_email">Отправить письмо</string>
+    <string name="select_time">Выберите время</string>
+</resources>

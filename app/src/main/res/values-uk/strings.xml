@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Daily Advice</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="share_advice">Поділитися порадою</string>
+    <string name="advice_id">Порада %1$d</string>
+    <string name="advice_text">Хороша порада - це те, що дає чоловік, коли він занадто старий, щоб подавати поганий приклад.</string>
+    <string name="error">На жаль, щось пішло не так!</string>
+    <string name="checkInternet">Не вдалося підключитися до сервера, перевірте підключення до Інтернету.</string>
+    <string name="unknownError">Невідома помилка</string>
+    <string name="swipe_to_refresh">Проведіть по екрану, щоб оновити</string>
+    <string name="settings">Налаштування</string>
+    <string name="subscription">Підписка</string>
+    <string name="manage_subscription">Управління підпискою</string>
+    <string name="preferences">Уподобання</string>
+    <string name="reminders">Нагадування</string>
+    <string name="language">Мова</string>
+    <string name="theme">Тема</string>
+    <string name="support_us">Підтримайте нас</string>
+    <string name="rate_us">Оцініть нас</string>
+    <string name="contact">Контакт</string>
+    <string name="donate_for_creators">Пожертвувати для творців</string>
+    <string name="become_a_supporter">Станьте прихильником. Підтримайте так, як вважаєте за потрібне</string>
+    <string name="coffee">Кава</string>
+    <string name="other">Інше</string>
+    <string name="privacy_policy">Політика конфіденційності</string>
+    <string name="terms_conditions">Положення та умови</string>
+    <string name="title_notification_reminder">Щоденні поради</string>
+    <string name="reminders_notification_channel_name">Служба повідомлень</string>
+    <string name="select_theme">Виберіть тему</string>
+    <string-array name="themes">
+        <item>Світла</item>
+        <item>Темна</item>
+        <item>Системна</item>
+    </string-array>
+    <string name="ok">Ок</string>
+    <string name="cancel">Скасувати</string>
+    <string name="select_language">Виберіть мову</string>
+    <string-array name="language">
+        <item>Англійська</item>
+        <item>Український</item>
+        <item>Українська</item>
+        <item>Німецька</item>
+        <item>Французька</item>
+        <item>Іспанська</item>
+    </string-array>
+    <string name="application_not_found">Додаток не знайдено</string>
+    <string name="send_email">Надіслати лист</string>
+    <string name="select_time">Виберіть час</string>
+</resources>

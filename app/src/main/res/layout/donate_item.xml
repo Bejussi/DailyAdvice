@@ -29,6 +29,6 @@
         android:layout_marginTop="@dimen/billing_price_margin_top"
         android:layout_marginEnd="@dimen/billing_margin"
         android:layout_marginBottom="@dimen/billing_margin"
-        android:text="@string/prise" />
+        android:text="@string/coffee" />
 
 </RelativeLayout>
