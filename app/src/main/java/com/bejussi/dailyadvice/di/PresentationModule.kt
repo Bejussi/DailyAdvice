@@ -34,17 +34,4 @@ class PresentationModule {
         @ApplicationContext context: Context
     ) = context.contentResolver
 
-    @Provides
-    @Singleton
-    suspend fun provideAdvice(
-        adviceApi: AdviceApi
-    ): Advice {
-        var advice: Advice
-        coroutineScope {
-            withContext(Dispatchers.IO) {
-                advice = adviceApi.gerRandomAdvice().toDomain()
-            }
-        }
-        return advice
-    }
 }

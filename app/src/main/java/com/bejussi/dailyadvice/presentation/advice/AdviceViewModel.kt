@@ -66,5 +66,4 @@ class AdviceViewModel @Inject constructor(
             }
         }
     }
-
 }

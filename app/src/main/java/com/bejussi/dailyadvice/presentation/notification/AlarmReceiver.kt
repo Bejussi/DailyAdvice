@@ -10,16 +10,38 @@ import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.bejussi.dailyadvice.R
+import com.bejussi.dailyadvice.domain.AdviceRepository
+import com.bejussi.dailyadvice.domain.model.Advice
+import com.bejussi.dailyadvice.domain.model.AdviceNotification
 import com.bejussi.dailyadvice.presentation.MainActivity
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class AlarmReceiver: BroadcastReceiver() {
+
+    @Inject
+    lateinit var adviceRepository: AdviceRepository
+
     override fun onReceive(context: Context, intent: Intent?) {
+
+        CoroutineScope(IO).launch {
+            val advice = adviceRepository.getNotificationAdvice()
+            setNotification(advice, context)
+        }
+    }
+
+    private fun setNotification(advice: AdviceNotification, context: Context) {
+
         val notificationIntent = Intent(context, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
             context,
             10,
             notificationIntent,
-            PendingIntent.FLAG_IMMUTABLE
+            PendingIntent.FLAG_UPDATE_CURRENT
         )
         val notification = NotificationCompat.Builder(
             context,
@@ -27,8 +49,9 @@ class AlarmReceiver: BroadcastReceiver() {
         )
             .setSmallIcon(R.mipmap.ic_launcher)
             .setContentTitle(context.getString(R.string.title_notification_reminder))
-            .setContentText(context.getString(R.string.advice_text))
+            .setContentText(advice.advice)
             .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
 
 
         val notificationManager = NotificationManagerCompat.from(context)
@@ -41,6 +64,8 @@ class AlarmReceiver: BroadcastReceiver() {
             return
         }
         notificationManager.notify(NOTIFY_ID, notification.build())
+
+        AlarmScheduler.schedule(context.applicationContext)
     }
 
     companion object {

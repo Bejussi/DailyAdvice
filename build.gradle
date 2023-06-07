@@ -21,6 +21,8 @@ buildscript {
         swiperefreshlayout="1.2.0-alpha01"
         preferences="1.2.0"
         work="2.8.1"
+        hilt_work="1.0.0"
+        room_runtime = "2.5.1"
     }
 
 

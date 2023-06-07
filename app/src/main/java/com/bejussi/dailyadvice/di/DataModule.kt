@@ -4,8 +4,10 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
+import androidx.room.Room
 import com.bejussi.dailyadvice.data.AdviceRepositoryImpl
 import com.bejussi.dailyadvice.data.SettingsDataStoreRepositoryImpl
+import com.bejussi.dailyadvice.data.local.AdviceNotificationDatabase
 import com.bejussi.dailyadvice.domain.AdviceRepository
 import com.bejussi.dailyadvice.domain.SettingsDataStoreRepository
 import dagger.Module
@@ -43,4 +45,20 @@ class DataModule {
     ): SettingsDataStoreRepository = SettingsDataStoreRepositoryImpl(
         dataStore = dataStore
     )
+
+    @Provides
+    @Singleton
+    fun provideAdviceNotificationDatabase(
+        @ApplicationContext
+        applicationContext: Context
+    ) = Room.databaseBuilder(
+        applicationContext,
+        AdviceNotificationDatabase::class.java,
+        AdviceNotificationDatabase.DATABASE_NAME
+    ).build()
+
+    @Provides
+    @Singleton
+    fun provideAdviceNotificationDao(adviceNotificationDatabase: AdviceNotificationDatabase) =
+        adviceNotificationDatabase.adviceNotificationDao()
 }

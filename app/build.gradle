@@ -68,6 +68,8 @@ dependencies {
     // Dagger - Hilt
     implementation("com.google.dagger:hilt-android:$hilt_version")
     kapt("com.google.dagger:hilt-android-compiler:$hilt_version")
+    implementation("androidx.hilt:hilt-work:$hilt_work")
+    kapt("androidx.hilt:hilt-compiler:$hilt_work")
 
     // Preference DataStore
     implementation "androidx.datastore:datastore-preferences:$datastore_preferences"
@@ -82,4 +84,10 @@ dependencies {
 
     // WorkManager with Coroutines
     implementation "androidx.work:work-runtime-ktx:$work"
+
+    // Room
+    implementation "androidx.room:room-runtime:$room_runtime"
+    kapt "androidx.room:room-compiler:$room_runtime"
+    implementation "androidx.room:room-ktx:$room_runtime"
+
 }
