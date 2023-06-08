@@ -4,17 +4,34 @@ import android.app.Application
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import androidx.work.Configuration
-import com.bejussi.dailyadvice.presentation.notification.worker.WorkHandler
+import androidx.work.Constraints
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.NetworkType
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
+import androidx.work.WorkManagerInitializer
+import com.bejussi.dailyadvice.presentation.notification.worker.NotificationWorker
+import com.bejussi.dailyadvice.presentation.notification.worker.NotificationWorkerFactory
 import dagger.hilt.android.HiltAndroidApp
+import java.util.concurrent.TimeUnit
+import javax.inject.Inject
 
 @HiltAndroidApp
 class App: Application(), Configuration.Provider {
 
-    init {
-        appInstance = this
-    }
+    @Inject
+    lateinit var notificationWorkerFactory: NotificationWorkerFactory
+
     override fun onCreate() {
         super.onCreate()
+
+        WorkManager.initialize(this.applicationContext, workManagerConfiguration)
+
+        createNotificationChannel()
+        setupNotificationWorker()
+    }
+
+    private fun createNotificationChannel() {
         val notificationChannel = NotificationChannel(
             "channel_id",
             "Notification Service",
@@ -22,15 +39,29 @@ class App: Application(), Configuration.Provider {
         )
         val notificationManager = getSystemService(NotificationManager::class.java)
         notificationManager.createNotificationChannel(notificationChannel)
-
-        WorkHandler.createWork()
     }
 
-    companion object {
-        lateinit var appInstance: App
+    private fun setupNotificationWorker() {
+        val constraints = Constraints.Builder()
+            .setRequiresCharging(true)
+            .setRequiredNetworkType(NetworkType.CONNECTED)
+            .build()
+
+        val myWork = PeriodicWorkRequestBuilder<NotificationWorker>(
+            1,
+            TimeUnit.HOURS
+        ).setConstraints(constraints).build()
+
+        WorkManager.getInstance().enqueueUniquePeriodicWork(
+            "MyUniqueWorkName",
+            ExistingPeriodicWorkPolicy.KEEP,
+            myWork
+        )
     }
 
-    override fun getWorkManagerConfiguration(): Configuration = Configuration.Builder()
-        .setMinimumLoggingLevel(android.util.Log.DEBUG)
-        .build()
+    override fun getWorkManagerConfiguration() =
+        Configuration.Builder()
+            .setMinimumLoggingLevel(android.util.Log.DEBUG)
+            .setWorkerFactory(notificationWorkerFactory)
+            .build()
 }

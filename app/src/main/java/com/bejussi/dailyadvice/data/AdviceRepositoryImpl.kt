@@ -11,6 +11,7 @@ import com.bejussi.dailyadvice.data.remote.AdviceApi
 import com.bejussi.dailyadvice.domain.AdviceRepository
 import com.bejussi.dailyadvice.domain.model.Advice
 import com.bejussi.dailyadvice.domain.model.AdviceNotification
+import com.bejussi.dailyadvice.presentation.notification.worker.MapperSlipToAdviceNotification
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
@@ -22,7 +23,8 @@ class AdviceRepositoryImpl @Inject constructor(
     private val stringResourcesProvider: StringResourcesProvider,
     private val adviceNotificationDao: AdviceNotificationDao,
     private val mapperToData: MapperToData,
-    private val mapperToDomain: MapperToDomain
+    private val mapperToDomain: MapperToDomain,
+    private val mappersliptoadvicenotification: MapperSlipToAdviceNotification
 ): AdviceRepository {
 
     override fun getRandomAdvice(): Flow<Resource<Advice>> = flow {
@@ -43,6 +45,14 @@ class AdviceRepositoryImpl @Inject constructor(
             ))
         }
     }
+
+    override suspend fun getRandomAdviceNotification() {
+        try {
+            val advice = adviceApi.gerRandomAdvice().toDomain()
+            insertNotificationAdvice(mappersliptoadvicenotification.map(advice.slip))
+        } catch (e: HttpException) { }
+    }
+
 
     override suspend fun getNotificationAdvice(): AdviceNotification {
         val adviceNotification = adviceNotificationDao.getAdviceNotification()
