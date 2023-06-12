@@ -44,4 +44,17 @@
             app:argType="string"
             android:defaultValue="privacy" />
     </fragment>
+    <fragment
+        android:id="@+id/notificationDetailsFragment"
+        android:name="com.bejussi.dailyadvice.presentation.notification.NotificationDetailsFragment"
+        android:label="fragment_notification_details"
+        tools:layout="@layout/fragment_notification_details" >
+        <action
+            android:id="@+id/action_notificationDetailsFragment_to_adviceFragment"
+            app:destination="@id/adviceFragment" />
+        <argument
+            android:name="notification_advice_id"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
 </navigation>

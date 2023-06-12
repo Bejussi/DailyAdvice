@@ -10,6 +10,8 @@ interface AdviceRepository {
 
     fun getRandomAdvice(): Flow<Resource<Advice>>
 
+    fun getAdviceById(id: Int): Flow<Resource<Advice>>
+
     suspend fun getRandomAdviceNotification()
 
     suspend fun getNotificationAdvice(): AdviceNotification

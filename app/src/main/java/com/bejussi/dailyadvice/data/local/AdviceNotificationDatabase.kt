@@ -5,7 +5,8 @@ import androidx.room.RoomDatabase
 
 @Database(
     entities = [AdviceNotificationData::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class AdviceNotificationDatabase: RoomDatabase() {
     abstract fun adviceNotificationDao(): AdviceNotificationDao

@@ -46,6 +46,25 @@ class AdviceRepositoryImpl @Inject constructor(
         }
     }
 
+    override fun getAdviceById(id: Int): Flow<Resource<Advice>> = flow {
+        emit(Resource.Loading())
+
+        try {
+            val data = adviceApi.gerAdviceById(id).toDomain()
+            emit(Resource.Success(data = data))
+        } catch (e: HttpException) {
+            emit(Resource.Error(
+                message = stringResourcesProvider.getString(R.string.error),
+                data = null
+            ))
+        } catch (e: IOException) {
+            emit(Resource.Error(
+                message = stringResourcesProvider.getString(R.string.checkInternet),
+                data = null
+            ))
+        }
+    }
+
     override suspend fun getRandomAdviceNotification() {
         try {
             val advice = adviceApi.gerRandomAdvice().toDomain()

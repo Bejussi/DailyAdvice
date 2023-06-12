@@ -6,18 +6,10 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.work.Constraints
-import androidx.work.ExistingPeriodicWorkPolicy
-import androidx.work.NetworkType
-import androidx.work.PeriodicWorkRequestBuilder
-import androidx.work.WorkManager
 import com.bejussi.dailyadvice.R
-import com.bejussi.dailyadvice.domain.AdviceRepository
-import com.bejussi.dailyadvice.presentation.notification.AlarmScheduler
-import com.bejussi.dailyadvice.presentation.notification.worker.NotificationWorker
+import com.bejussi.dailyadvice.presentation.notification.alarm.AlarmScheduler
 import com.bejussi.dailyadvice.presentation.settings.SettingsViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

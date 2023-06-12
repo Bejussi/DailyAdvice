@@ -39,9 +39,9 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <receiver android:name=".presentation.notification.AlarmReceiver" />
+        <receiver android:name=".presentation.notification.alarm.AlarmReceiver" />
         <receiver
-            android:name=".presentation.notification.BootReceiver"
+            android:name=".presentation.notification.alarm.BootReceiver"
             android:enabled="true"
             android:exported="false">
 
@@ -64,7 +64,12 @@
         <provider
             android:name="androidx.startup.InitializationProvider"
             android:authorities="${applicationId}.androidx-startup"
-            tools:node="remove">
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
         </provider>
     </application>
 

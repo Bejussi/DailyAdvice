@@ -25,7 +25,11 @@ class App: Application(), Configuration.Provider {
     override fun onCreate() {
         super.onCreate()
 
-        WorkManager.initialize(this.applicationContext, workManagerConfiguration)
+        WorkManager.initialize(
+            this,
+            Configuration.Builder()
+            .setWorkerFactory(notificationWorkerFactory)
+            .build())
 
         createNotificationChannel()
         setupNotificationWorker()
@@ -48,9 +52,11 @@ class App: Application(), Configuration.Provider {
             .build()
 
         val myWork = PeriodicWorkRequestBuilder<NotificationWorker>(
-            1,
+            3,
             TimeUnit.HOURS
-        ).setConstraints(constraints).build()
+        )
+            .setConstraints(constraints)
+            .build()
 
         WorkManager.getInstance().enqueueUniquePeriodicWork(
             "MyUniqueWorkName",
@@ -61,7 +67,6 @@ class App: Application(), Configuration.Provider {
 
     override fun getWorkManagerConfiguration() =
         Configuration.Builder()
-            .setMinimumLoggingLevel(android.util.Log.DEBUG)
             .setWorkerFactory(notificationWorkerFactory)
             .build()
 }

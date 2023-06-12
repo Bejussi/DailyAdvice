@@ -71,6 +71,8 @@ dependencies {
     implementation("androidx.hilt:hilt-work:$hilt_work")
     kapt("androidx.hilt:hilt-compiler:$hilt_work")
 
+    implementation "androidx.startup:startup-runtime:$startup_runtime"
+
     // Preference DataStore
     implementation "androidx.datastore:datastore-preferences:$datastore_preferences"
 

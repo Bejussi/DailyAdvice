@@ -26,7 +26,7 @@ class NotificationWorker @AssistedInject constructor(
             Log.i("WORK_STATUS", "Worker error")
             return Result.retry()
         }
-
+        Log.i("WORK_STATUS", "Worker success")
         return Result.success()
     }
 

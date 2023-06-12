@@ -1,23 +1,11 @@
-package com.bejussi.dailyadvice.presentation.notification
+package com.bejussi.dailyadvice.presentation.notification.alarm
 
 import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.graphics.Insets.add
-import androidx.work.Constraints
-import androidx.work.ExistingPeriodicWorkPolicy
-import androidx.work.NetworkType
-import androidx.work.PeriodicWorkRequest
-import androidx.work.WorkManager
-import com.bejussi.dailyadvice.di.dataStore
-import com.bejussi.dailyadvice.domain.AdviceRepository
-import com.bejussi.dailyadvice.domain.SettingsDataStoreRepository
-import dagger.hilt.EntryPoint
 import java.util.Calendar
 import java.util.Locale
-import java.util.concurrent.TimeUnit
-import javax.inject.Inject
 
 object AlarmScheduler {
 
@@ -25,7 +13,7 @@ object AlarmScheduler {
 
     fun schedule(
         context: Context,
-        time: String = "08:00",
+        time: String,
         reminderId: Int = REMINDER_NOTIFICATION_REQUEST_CODE
     ) {
         val alarmManager = context.getSystemService(AlarmManager::class.java)
