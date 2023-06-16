@@ -92,4 +92,7 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_runtime"
     implementation "androidx.room:room-ktx:$room_runtime"
 
+    //Billings
+    implementation("com.android.billingclient:billing-ktx:$billing_version")
+    implementation("com.android.billingclient:billing:$billing_version")
 }

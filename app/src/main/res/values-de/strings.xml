@@ -39,8 +39,8 @@
     <string name="select_language">Wählen Sie eine Sprache aus</string>
     <string-array name="language">
         <item>Englisch</item>
-        <item>Ukrainisch</item>
-        <item>Ukrainisch</item>
+        <item>Ukrainian</item>
+        <item>Russian</item>
         <item>Deutsch</item>
         <item>Französisch</item>
         <item>Spanisch</item>

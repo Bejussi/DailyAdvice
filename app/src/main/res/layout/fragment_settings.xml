@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/background"
     tools:context=".presentation.settings.SettingsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -71,34 +71,6 @@
 
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/subscription"
-                style="@style/SettingsCategoryText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/subscription"
-                android:layout_marginTop="@dimen/margin_top_bottom"/>
-
-            <LinearLayout
-                android:id="@+id/subscriptionButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="@dimen/margin_top_setting_menu">
-
-                <TextView
-                    style="@style/SettingsMenuText"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/manage_subscription"/>
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/arrow_chevron_right" />
-
-            </LinearLayout>
 
             <TextView
                 android:id="@+id/preferences"
@@ -106,7 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/preferences"
-                android:layout_marginTop="@dimen/margin_top_between_setting_menu_title"/>
+                android:layout_marginTop="@dimen/margin_top_bottom"/>
 
         <LinearLayout
             android:id="@+id/remindersButton"
@@ -229,12 +201,12 @@
                     android:id="@+id/donate_choose"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/margin_top_setting_menu"
                     android:layoutAnimation="@anim/recycler_view_animation"
-                    tools:listitem="@layout/donate_item"
+                    android:orientation="horizontal"
+                    android:visibility="visible"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    android:layout_marginTop="@dimen/margin_top_setting_menu" />
+                    tools:listitem="@layout/donate_item" />
 
             </RelativeLayout>
 

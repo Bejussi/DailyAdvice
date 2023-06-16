@@ -8,12 +8,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.android.billingclient.api.ProductDetails
 import com.bejussi.dailyadvice.R
 import com.bejussi.dailyadvice.core.util.makeToast
 import com.bejussi.dailyadvice.databinding.FragmentSettingsBinding
+import com.bejussi.dailyadvice.presentation.settings.billing.BillingActionListener
+import com.bejussi.dailyadvice.presentation.settings.billing.BillingAdapter
+import com.bejussi.dailyadvice.presentation.settings.billing.BillingViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
@@ -25,6 +30,9 @@ class SettingsFragment : Fragment(), View.OnClickListener {
 
     private lateinit var binding: FragmentSettingsBinding
     private val settingsViewModel: SettingsViewModel by viewModels()
+    private val billingViewModel: BillingViewModel by viewModels()
+
+    private lateinit var adapter: BillingAdapter
 
     private var selectedThemeIndex = 0
     private var selectedLanguageIndex = 0
@@ -42,8 +50,18 @@ class SettingsFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupRecyclerView()
+
+        billingViewModel.productsList.observe(viewLifecycleOwner) {
+            adapter.submitList(it)
+        }
+
+        billingViewModel.loading.observe(viewLifecycleOwner) { loading ->
+            binding.progress.isVisible = loading
+            binding.donateChoose.isVisible = !loading
+        }
+
         binding.backButton.setOnClickListener(this)
-        binding.subscriptionButton.setOnClickListener(this)
         binding.remindersButton.setOnClickListener(this)
         binding.languageButton.setOnClickListener(this)
         binding.themeButton.setOnClickListener(this)
@@ -97,7 +115,6 @@ class SettingsFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View) {
         when(v.id) {
             R.id.backButton -> navigate()
-            R.id.subscriptionButton -> manageSubscription()
             R.id.remindersButton -> setReminder()
             R.id.languageButton -> setLanguage()
             R.id.themeButton -> setTheme()
@@ -106,6 +123,15 @@ class SettingsFragment : Fragment(), View.OnClickListener {
             R.id.privacyPolicyButton -> showPrivacy()
             R.id.termsConditionsButton -> showTerms()
         }
+    }
+
+    private fun setupRecyclerView() {
+        adapter = BillingAdapter(object : BillingActionListener {
+            override fun startBilling(productDetails: ProductDetails) {
+                billingViewModel.launchBillingFlow(requireActivity(), productDetails)
+            }
+        })
+        binding.donateChoose.adapter = adapter
     }
 
     private fun showTerms() {
@@ -242,10 +268,6 @@ class SettingsFragment : Fragment(), View.OnClickListener {
             settingsViewModel.setNotificationTime(formattedTime)
         }
 
-    }
-
-    private fun manageSubscription() {
-        TODO("Not yet implemented")
     }
 
     private fun navigate() {

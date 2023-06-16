@@ -39,8 +39,8 @@
     <string name="select_language">Виберіть мову</string>
     <string-array name="language">
         <item>Англійська</item>
-        <item>Український</item>
         <item>Українська</item>
+        <item>Російська</item>
         <item>Німецька</item>
         <item>Французька</item>
         <item>Іспанська</item>

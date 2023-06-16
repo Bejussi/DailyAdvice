@@ -106,7 +106,6 @@ class AdviceFragment : Fragment(), View.OnClickListener {
         val viewsToHide = listOf(
             R.id.shareAdviceButton,
             R.id.appName,
-            R.id.premuim_button,
             R.id.settings_button
         )
 

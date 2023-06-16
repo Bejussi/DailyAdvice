@@ -9,7 +9,7 @@ buildscript {
         material = "1.9.0"
         constraintlayout = "2.1.4"
         hilt_version = "2.44"
-        nav_version = "2.5.3"
+        nav_version = "2.6.0"
         safe_args = "2.5.1"
         retrofit = "2.9.0"
         okhttp = "5.0.0-alpha.2"
@@ -24,6 +24,7 @@ buildscript {
         hilt_work="1.0.0"
         room_runtime = "2.5.1"
         startup_runtime = "1.1.1"
+        billing_version = "6.0.0"
     }
 
 
