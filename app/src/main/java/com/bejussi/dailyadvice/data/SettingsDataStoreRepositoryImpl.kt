@@ -35,7 +35,7 @@ class SettingsDataStoreRepositoryImpl @Inject constructor(
     }
 
     override fun getNotificationTime(): Flow<String> {
-        return getData(notificationKey, "17:00")
+        return getData(notificationKey, "08:00")
     }
 
     fun getData(
