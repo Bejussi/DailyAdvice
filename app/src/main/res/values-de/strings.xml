@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tägliche Ratschläge</string>
+    <!-- TODO: Entfernen oder ändern Sie diesen Platzhaltertext -->
+    <string name="hello_blank_fragment">Hallo leeres Fragment</string>
+    <string name="share_advice">Ratschläge teilen</string>
+    <string name="advice_id">Rat %1$d</string>
+    <string name="advice_text">Gute Ratschläge gibt ein Mann, wenn er zu alt ist, um ein schlechtes Beispiel zu geben.</string>
+    <string name="error">Leider ist etwas schiefgegangen!</string>
+    <string name="checkInternet">Verbindung zum Server fehlgeschlagen, bitte überprüfen Sie Ihre Internetverbindung.</string>
+    <string name="unknownError">Unbekannter Fehler</string>
+    <string name="swipe_to_refresh">Zum Aktualisieren wischen</string>
+    <string name="settings">Einstellungen</string>
+    <string name="subscription">Abonnement</string>
+    <string name="manage_subscription">Abonnement verwalten</string>
+    <string name="preferences">Einstellungen</string>
+    <string name="reminders">Erinnerungen</string>
+    <string name="language">Sprache</string>
+    <string name="theme">Theme</string>
+    <string name="support_us">Unterstützen Sie uns</string>
+    <string name="rate_us">Bewerten Sie uns</string>
+    <string name="contact">Kontakt</string>
+    <string name="donate_for_creators">Für Ersteller spenden</string>
+    <string name="become_a_supporter">Werden Sie Unterstützer. Unterstützen Sie, wie Sie es für richtig halten</string>
+    <string name="coffee">Kaffee</string>
+    <string name="other">Sonstiges</string>
+    <string name="privacy_policy">Datenschutzerklärung</string>
+    <string name="terms_conditions">Allgemeine Geschäftsbedingungen</string>
+    <string name="title_notification_reminder">Tägliche Tipps</string>
+    <string name="reminders_notification_channel_name">Benachrichtigungsdienst</string>
+    <string name="select_theme">Wählen Sie ein Thema aus</string>
+    <string-array name="themes">
+        <item>Lichter</item>
+        <item>Dunkel</item>
+        <item>System</item>
+    </string-array>
+    <string name="ok">Ok</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="select_language">Wählen Sie eine Sprache aus</string>
+    <string-array name="language">
+        <item>Englisch</item>
+        <item>Ukrainian</item>
+        <item>Russian</item>
+        <item>Deutsch</item>
+        <item>Französisch</item>
+        <item>Spanisch</item>
+    </string-array>
+    <string name="application_not_found">Anwendung nicht gefunden</string>
+    <string name="send_email">E-Mail senden</string>
+    <string name="select_time">Wählen Sie eine Zeit aus</string>
+</resources>
