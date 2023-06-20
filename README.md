@@ -1,4 +1,4 @@
-# 🖩 Daily Advice
+# 💡 Daily Advice
 
 **Daily Advice** is daily dose of inspiration with customizable reminders and notifications
 
